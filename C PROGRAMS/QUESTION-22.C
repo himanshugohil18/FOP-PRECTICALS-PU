@@ -1,14 +1,18 @@
 /*
-21. C program to print all lowercase alphabets using while loop.
+22. Program to check whether a person is eligible to vote or not.
 */
 #include <stdio.h>
 
 int main() {
-    char ch = 'a';
+    int age;
 
-    while (ch <= 'z') {
-        printf("%c ", ch);
-        ch++;
-    }
+    printf("Enter age: ");
+    scanf("%d", &age);
+
+    if (age >= 18)
+        printf("Eligible to vote");
+    else
+        printf("Not eligible to vote");
+
     return 0;
 }
