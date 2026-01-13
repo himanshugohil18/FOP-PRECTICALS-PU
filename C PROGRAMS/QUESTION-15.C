@@ -12,7 +12,10 @@ int main() {
     char temp;
 
     printf("Enter a string: ");
-    gets(str);
+    fgets(str, sizeof(str), stdin);
+
+    /* Remove newline added by fgets */
+    str[strcspn(str, "\n")] = '\0';
 
     p = str;
 
