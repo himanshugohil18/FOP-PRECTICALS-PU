@@ -9,10 +9,14 @@ int main() {
     char str1[100], str2[100];
 
     printf("Enter first string: ");
-    gets(str1);
+    fgets(str1, sizeof(str1), stdin);
 
     printf("Enter second string: ");
-    gets(str2);
+    fgets(str2, sizeof(str2), stdin);
+
+    /* Remove newline character from strings */
+    str1[strcspn(str1, "\n")] = '\0';
+    str2[strcspn(str2, "\n")] = '\0';
 
     strcat(str1, str2);
 
