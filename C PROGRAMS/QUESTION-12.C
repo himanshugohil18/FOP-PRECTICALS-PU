@@ -10,7 +10,10 @@ int main() {
     int i, length, flag = 0;
 
     printf("Enter a string: ");
-    gets(str);
+    fgets(str, sizeof(str), stdin);
+
+    /* Remove newline character */
+    str[strcspn(str, "\n")] = '\0';
 
     length = strlen(str);
 
@@ -21,11 +24,10 @@ int main() {
         }
     }
 
-    if (flag == 0) {
+    if (flag == 0)
         printf("The string is a Palindrome");
-    } else {
+    else
         printf("The string is not a Palindrome");
-    }
 
     return 0;
 }
